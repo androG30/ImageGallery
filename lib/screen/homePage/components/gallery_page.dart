@@ -40,7 +40,7 @@ class _GalleryState extends State<Gallery> {
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       child: Container(
-                        margin: EdgeInsets.all(defaultSmallPadding),
+                        padding: EdgeInsets.all(defaultSmallPadding),
                         width: displayWidth(context),
                         child: CachedNetworkImage(
                           imageUrl: snapshot.data[index].url,
@@ -86,6 +86,7 @@ class _GalleryState extends State<Gallery> {
   Future<List<ImageItem>> getImageData(int page) async {
     final List<ImageItem> compiled = [];
     for (int i = 0, iL = 100; i < iL; i += 1) {
+      print(i);
       final url = 'https://picsum.photos/id/${page * 100 + i}/1000/800';
       final imageItem = ImageItem(
         url: url,

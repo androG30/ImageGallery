@@ -49,11 +49,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         GestureDetector(
-                          child: Text(
-                            'A',
-                            style: TextStyle(
-                              color: currentIndex == 0 ? accentColor : blackColor,
-                              fontSize: smallFontSize,
+                          child: Container(
+                            padding:EdgeInsets.all(defaultPadding),
+                            child: Text(
+                              'A',
+                              style: TextStyle(
+                                color: currentIndex == 0 ? accentColor : blackColor,
+                                fontSize: smallFontSize,
+                              ),
                             ),
                           ),
                           onTap: (){
@@ -61,11 +64,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
                           },
                         ),
                         GestureDetector(
-                          child: Text(
-                            'B',
-                            style: TextStyle(
-                              color: currentIndex == 1 ? accentColor : blackColor,
-                              fontSize: smallFontSize,
+                          child: Container(
+                            padding:EdgeInsets.all(defaultPadding),
+                            child: Text(
+                              'B',
+                              style: TextStyle(
+                                color: currentIndex == 1 ? accentColor : blackColor,
+                                fontSize: smallFontSize,
+                              ),
                             ),
                           ),
                           onTap: (){
@@ -73,11 +79,15 @@ class _BottomNavigationState extends State<BottomNavigation> {
                           },
                         ),
                         GestureDetector(
-                          child: Text(
-                            'C',
-                            style: TextStyle(
-                              color: currentIndex == 2 ? accentColor : blackColor,
-                              fontSize: smallFontSize,
+                          child: Container(
+                            padding:EdgeInsets.all(defaultPadding),
+
+                            child: Text(
+                              'C',
+                              style: TextStyle(
+                                color: currentIndex == 2 ? accentColor : blackColor,
+                                fontSize: smallFontSize,
+                              ),
                             ),
                           ),
                           onTap: (){
