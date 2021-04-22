@@ -48,9 +48,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        GestureDetector(
-                          child: Container(
-                            padding:EdgeInsets.all(defaultPadding),
+                        Container(
+                          padding:EdgeInsets.all(defaultPadding),
+                          child: TextButton(
                             child: Text(
                               'A',
                               style: TextStyle(
@@ -58,14 +58,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
                                 fontSize: smallFontSize,
                               ),
                             ),
+                              onPressed: () {
+                                setBottomBarIndex(0);
+                              }
                           ),
-                          onTap: (){
-                            setBottomBarIndex(0);
-                          },
                         ),
-                        GestureDetector(
-                          child: Container(
-                            padding:EdgeInsets.all(defaultPadding),
+                        Container(
+                          padding:EdgeInsets.all(defaultPadding),
+                          child: TextButton(
                             child: Text(
                               'B',
                               style: TextStyle(
@@ -73,15 +73,15 @@ class _BottomNavigationState extends State<BottomNavigation> {
                                 fontSize: smallFontSize,
                               ),
                             ),
+                            onPressed: (){
+                              setBottomBarIndex(1);
+                            },
                           ),
-                          onTap: (){
-                            setBottomBarIndex(1);
-                          },
                         ),
-                        GestureDetector(
-                          child: Container(
-                            padding:EdgeInsets.all(defaultPadding),
+                        Container(
+                          padding:EdgeInsets.all(defaultPadding),
 
+                          child: TextButton(
                             child: Text(
                               'C',
                               style: TextStyle(
@@ -89,10 +89,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
                                 fontSize: smallFontSize,
                               ),
                             ),
+                            onPressed: (){
+                              setBottomBarIndex(2);
+                            },
                           ),
-                          onTap: (){
-                            setBottomBarIndex(2);
-                          },
                         ),
                       ],
                     ),
