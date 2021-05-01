@@ -45,20 +45,19 @@ class _HomePageState extends State<HomePage> {
   }
 
   void updatePos(int pos) {
-    if(pos==0)
-    {
-      widget.title="Page A";
-    }
-    else if(pos==1)
-    {
-      widget.title="Page B";
-    }
-    else if(pos==2)
-    {
-      widget.title="Page C";
-    }
-
     setState(() {
+      if(pos==0)
+      {
+        widget.title="Page A";
+      }
+      else if(pos==1)
+      {
+        widget.title="Page B";
+      }
+      else if(pos==2)
+      {
+        widget.title="Page C";
+      }
       widget.position = pos;
     });
   }

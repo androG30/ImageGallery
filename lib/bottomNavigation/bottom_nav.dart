@@ -15,12 +15,36 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
 
   int currentIndex = 0;
+  List<String>tabs=['A','B','C'];
 
   setBottomBarIndex(index) {
     widget.onNavChange(index);
     setState(() {
       currentIndex = index;
     });
+  }
+
+  Widget getTabsWidgets()
+  {
+    List<Widget> list = [];
+    for(var i = 0; i < tabs.length; i++){
+      list.add( Container(
+        padding:EdgeInsets.all(defaultPadding),
+        child: TextButton(
+            child: Text(
+              tabs[i],
+              style: TextStyle(
+                color: currentIndex == 0 ? accentColor : blackColor,
+                fontSize: smallFontSize,
+              ),
+            ),
+            onPressed: () {
+              setBottomBarIndex(i);
+            }
+        ),
+      ));
+    }
+    return Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: list);
   }
 
   @override
@@ -45,57 +69,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
                   Container(
                     width: size.width,
                     height: 80,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          padding:EdgeInsets.all(defaultPadding),
-                          child: TextButton(
-                            child: Text(
-                              'A',
-                              style: TextStyle(
-                                color: currentIndex == 0 ? accentColor : blackColor,
-                                fontSize: smallFontSize,
-                              ),
-                            ),
-                              onPressed: () {
-                                setBottomBarIndex(0);
-                              }
-                          ),
-                        ),
-                        Container(
-                          padding:EdgeInsets.all(defaultPadding),
-                          child: TextButton(
-                            child: Text(
-                              'B',
-                              style: TextStyle(
-                                color: currentIndex == 1 ? accentColor : blackColor,
-                                fontSize: smallFontSize,
-                              ),
-                            ),
-                            onPressed: (){
-                              setBottomBarIndex(1);
-                            },
-                          ),
-                        ),
-                        Container(
-                          padding:EdgeInsets.all(defaultPadding),
-
-                          child: TextButton(
-                            child: Text(
-                              'C',
-                              style: TextStyle(
-                                color: currentIndex == 2 ? accentColor : blackColor,
-                                fontSize: smallFontSize,
-                              ),
-                            ),
-                            onPressed: (){
-                              setBottomBarIndex(2);
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
+                    child: getTabsWidgets(),
                   )
                 ],
               ),
